@@ -4,8 +4,8 @@ import geopandas as gpd
 import leafmap.foliumap as leafmap 
 
 # Pre-processing
-#mohali_crossings_df = gpd.read_file('shps/secondary_mohali_pred_deeplab_shapefile.shp')
-#gurgaon_crossings_df = gpd.read_file('shps/secondary_gurgaon_pred_deeplab_shapefile.shp')
+mohali_crossings_df = gpd.read_file('shps/secondary_mohali_pred_deeplab_shapefile.shp')
+gurgaon_crossings_df = gpd.read_file('shps/secondary_gurgaon_pred_deeplab_shapefile.shp')
 mohali_tree_df = gpd.read_file('shps/mohali_merged.shp')
 
 m_g = leafmap.Map(center=[40, -100], zoom=4)
@@ -16,9 +16,9 @@ m_m = leafmap.Map(center=[-40, 100], zoom=4)
 m_m.add_basemap("HYBRID")
 m_m.add_gdf(mohali_crossings_df, spin=True)
 
-m_m = leafmap.Map(center=[-40, 100], zoom=4)
-m_m.add_basemap("HYBRID")
-m_m.add_gdf(mohali_tree_df, spin=True)
+m_mt = leafmap.Map(center=[-40, 100], zoom=4)
+m_mt.add_basemap("HYBRID")
+m_mt.add_gdf(mohali_tree_df, spin=True)
 
 
 milestones_df = pd.DataFrame({'Index Version': [0, 1, 2, 3, 4],
@@ -54,7 +54,7 @@ st.markdown("## Tree C")
 col3, col4 = st.columns(2)
 with col3:
     st.markdown("### Mohali")
-    m_city1.to_streamlit(height=300)
+    m_mt.to_streamlit(height=300)
 
 st.markdown("## How do we do this?")
 st.image('pics/example-images.png')
