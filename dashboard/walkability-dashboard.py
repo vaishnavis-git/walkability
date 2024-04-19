@@ -4,8 +4,8 @@ import geopandas as gpd
 import leafmap.foliumap as leafmap 
 
 # Pre-processing
-mohali_crossings_df = gpd.read_file('shps/secondary_mohali_pred_deeplab_shapefile.shp')
-gurgaon_crossings_df = gpd.read_file('shps/secondary_gurgaon_pred_deeplab_shapefile.shp')
+#mohali_crossings_df = gpd.read_file('shps/secondary_mohali_pred_deeplab_shapefile.shp')
+#gurgaon_crossings_df = gpd.read_file('shps/secondary_gurgaon_pred_deeplab_shapefile.shp')
 mohali_tree_df = gpd.read_file('shps/mohali_merged.shp')
 
 m_g = leafmap.Map(center=[40, -100], zoom=4)
